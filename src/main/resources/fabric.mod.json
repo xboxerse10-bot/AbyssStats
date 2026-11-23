@@ -1,1 +1,0 @@
-{"schemaVersion":1,"id":"abyssstats","version":"${version}","name":"AbyssStats","description":"Regional PvP leaderboards and holograms","environment":"server","entrypoints":{"main":["ro.abyssmc.abyssstats.AbyssStats"]},"depends":{"fabricloader":">=0.19.5","minecraft":"26.3","fabric-api":"*"}}
