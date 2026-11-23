@@ -195,7 +195,7 @@ public final class AbyssStats implements ModInitializer {
                 + ",strikethrough:" + strikethrough + ",obfuscated:" + obfuscated + "}";
     }
     static String tag(String id){return "abyssstats_"+id.replaceAll("[^a-zA-Z0-9_]","_");}
-    static void command(String cmd){if(server!=null)try{server.getCommands().performPrefixedCommand(server.createCommandSourceStack(),cmd);}catch(Exception e){System.err.println("[AbyssStats] command: "+e);}}
+    static void command(String cmd){if(server!=null)try{server.getCommands().performPrefixedCommand(server.createCommandSourceStack().withSuppressedOutput(),cmd);}catch(Exception e){System.err.println("[AbyssStats] command: "+e);}}
     static Set<String> hologramDimensions(){
         Set<String> dims=new LinkedHashSet<>(List.of("minecraft:overworld","minecraft:the_nether","minecraft:the_end"));
         for(Hologram h:holograms.values())if(h.world!=null)dims.add(h.world);
