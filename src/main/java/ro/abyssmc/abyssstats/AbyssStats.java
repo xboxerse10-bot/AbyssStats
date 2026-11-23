@@ -217,4 +217,6 @@ public final class AbyssStats implements ModInitializer {
     }
     static void load(){try{Files.createDirectories(DIR);Files.createDirectories(HOLOS);if(!Files.exists(DATA))return;State s=GSON.fromJson(Files.readString(DATA),State.class);arenas.clear();holograms.clear();if(s!=null){if(s.arenas!=null)arenas.putAll(s.arenas);if(s.holograms!=null)holograms.putAll(s.holograms);}}catch(Exception e){throw new IllegalStateException("AbyssStats nu poate citi data.json",e);}}
     static void save(){try{Files.createDirectories(DIR);State s=new State();s.arenas.putAll(arenas);s.holograms.putAll(holograms);Path tmp=DIR.resolve("data.json.tmp");Files.writeString(tmp,GSON.toJson(s),StandardCharsets.UTF_8);Files.move(tmp,DATA,StandardCopyOption.REPLACE_EXISTING);}catch(Exception e){System.err.println("[AbyssStats] Salvare esuata: "+e);}}
+    import java.util.regex.Matcher;
+    import java.util.regex.Pattern;
 }
